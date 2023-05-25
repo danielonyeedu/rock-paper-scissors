@@ -19,43 +19,43 @@ function getComputerChoice() {
  */
 function playerRound(playerSelection, computerSelection) {
     let playerWins; // True if player wins, False if player loses
-    let draw = False // True if there is a draw
+    let draw = false // True if there is a draw
     let decision; // string of round outcome
 
     //If player chooses rock
     if (playerSelection === "rock"){
         if (computerSelection === "scissors"){
-            playerWins = True // rock beats scissors
+            playerWins = true // rock beats scissors
         }
         else if (computerSelection === "rock"){
-            draw = True // rock equals rock
+            draw = true // rock equals rock
         }
         else {
-            playerWins = False // paper beats rock
+            playerWins = false // paper beats rock
         }
     }
     //If player chooses paper
     else if (playerSelection === "paper"){
         if (computerSelection === "scissors"){
-            playerWins = False // scissors beats paper
+            playerWins = false // scissors beats paper
         }
         else if (computerSelection === "rock"){
-            playerWins = True // paper beats rock
+            playerWins = true // paper beats rock
         }
         else {
-            draw = True // paper equals paper
+            draw = true // paper equals paper
         }
     }
     //If player chooses scissors
     else {
         if (computerSelection === "scissors"){
-            draw = True // scissors equals scissors
+            draw = true // scissors equals scissors
         }
         else if (computerSelection === "rock"){
-            playerWins = False // rock beats scissors
+            playerWins = false // rock beats scissors
         }
         else {
-            playerWins = True // scissors beats paper
+            playerWins = true // scissors beats paper
         }
     }
 
@@ -71,7 +71,6 @@ function playerRound(playerSelection, computerSelection) {
     }
 
     console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}`)
-    console.log(decision)
     return decision
 }
 
@@ -79,8 +78,8 @@ function playerRound(playerSelection, computerSelection) {
  * Main Function to run the game
  */
 function main() {
-    const playerSelection = "rock"
-    const computerSelection = "rock"
+    const playerSelection = "scissors"
+    const computerSelection = "scissors"
     console.log(playerRound(playerSelection, computerSelection))
 }
 
