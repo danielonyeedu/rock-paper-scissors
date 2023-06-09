@@ -1,4 +1,4 @@
-// This script runs the game rock, paper, scissors for five round
+// This script runs the game rock, paper, scissors for five rounds
 
 /**
  * Make the Computer's play in round of the game
@@ -17,45 +17,43 @@ function getComputerChoice() {
  * @param computerSelection
  * @return 1 if player wins, 2 if the computer wins, or 3 if it is a draw
  */
-function playerRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     let playerWins; // True if player wins, False if player loses
     let draw = false;; // True if there is a draw
     let decision; // string of round outcome
 
-    //If player chooses rock
+    // Game logic for rock, paper, scissors
     if (playerSelection === "rock"){
         if (computerSelection === "scissors"){
-            playerWins = true; // rock beats scissors
+            playerWins = true; 
         }
         else if (computerSelection === "rock"){
-            draw = true; // rock equals rock
+            draw = true; 
         }
         else {
-            playerWins = false; // paper beats rock
+            playerWins = false; 
         }
     }
-    //If player chooses paper
     else if (playerSelection === "paper"){
         if (computerSelection === "scissors"){
-            playerWins = false; // scissors beats paper
+            playerWins = false; 
         }
         else if (computerSelection === "rock"){
-            playerWins = true; // paper beats rock
+            playerWins = true; 
         }
         else {
-            draw = true; // paper equals paper
+            draw = true; 
         }
     }
-    //If player chooses scissors
     else {
         if (computerSelection === "scissors"){
-            draw = true; // scissors equals scissors
+            draw = true;
         }
         else if (computerSelection === "rock"){
-            playerWins = false; // rock beats scissors
+            playerWins = false;
         }
         else {
-            playerWins = true; // scissors beats paper
+            playerWins = true; 
         }
     }
 
@@ -81,7 +79,7 @@ function playerRound(playerSelection, computerSelection) {
  * Main Function to run the game
  */
 function main() {
-    const rounds = 5;
+    const rounds = 5; //number of rounds to play the game
     let winCount = 0; // number of wins
     let loseCount = 0; //number of losses
     let drawCount = 0; // number of draws
@@ -109,7 +107,7 @@ function main() {
         }
         
         // Play round and update wins, losses, and draws
-        decision = playerRound(playerSelection, computerSelection);
+        decision = playRound(playerSelection, computerSelection);
         if (decision === 1){
             winCount++;
         }
@@ -122,16 +120,16 @@ function main() {
     }
 
     // End game results
-    console.log(`Results: Wins: ${winCount}, Losses: ${loseCount}, Draws: ${drawCount}`)
+    console.log(`Results: Wins: ${winCount}, Losses: ${loseCount}, Draws: ${drawCount}`);
 
     if (winCount > 2){
-        console.log("You Win!!!!")
+        console.log("You Win!!!!");
     }
     else if (loseCount > 2){
-        console.log("You Lost!!!!")
+        console.log("You Lost!!!!");
     }
     else {
-        console.log("It's a draw!!!!")
+        console.log("It's a draw!!!!");
     }
 }
 
@@ -145,4 +143,4 @@ function test() {
 
 }
 
-main()
+main();
