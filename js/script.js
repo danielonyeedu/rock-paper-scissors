@@ -8,7 +8,7 @@ function getComputerChoice() {
     let options = ['rock', 'paper', 'scissors'];
     let choice = Math.floor(Math.random()*options.length);
 
-    return options[choice]
+    return options[choice];
 }
 
 /**
@@ -133,6 +133,77 @@ function main() {
     }
 }
 
+
+
+function newMain() {
+    const rounds = 6; //number of rounds to play the game
+    let winCount = 0; // number of wins
+    let loseCount = 0; //number of losses
+    let drawCount = 0; // number of draws
+    let roundsPlayed = 0;
+
+    // Keeps track of scores
+    const playerScore = document.querySelector("#player-score");
+    const computerScore = document.querySelector("#computer-score");
+
+    // Set Event Listeners for players choices
+    const buttons = document.querySelectorAll(".player-choice");
+    buttons.forEach(button => {
+        button.addEventListener('click', playerChose);
+    })
+
+    buttons.forEach(button => {
+        button.addEventListener('transitionend', removeAttribute)
+    })
+
+    /**
+     * Function is called whenever a player has made a choice on
+     * rock, paper, scissors, lizard, or spock
+     * @param {*} event 
+     */
+    function playerChose(event){
+        const element = event.target;
+        const playerChoice = element.dataset.choice;
+        const computerChoice = getComputerChoice();
+
+        element.classList.add('active') //transform on button click
+
+        // Play round and update wins, losses, and draws
+        let decision = playRound(playerChoice, computerChoice);
+        if (decision === 1){
+            playerScore.textContent = parseInt(playerScore.textContent) + 1
+            winCount++;
+        }
+        else if (decision === 2){
+            computerScore.textContent = parseInt(computerScore.textContent) + 1
+            loseCount++;
+        }
+        else {
+            drawCount++;
+        }
+        roundsPlayed++;
+
+        if (roundsPlayed === rounds){
+            // End game results
+            console.log(`Results: Wins: ${winCount}, Losses: ${loseCount}, Draws: ${drawCount}`);
+    
+            if (winCount > 2){
+                console.log("You Win!!!!");
+            }
+            else if (loseCount > 2){
+                console.log("You Lost!!!!");
+            }
+            else {
+                console.log("It's a draw!!!!");
+            }
+        }
+    }
+
+    function removeAttribute(e) {
+        if(e.propertyName !== "transform") return
+        this.classList.remove('active')
+    }
+}
 /**
  * Used to test out the code
  */
@@ -143,4 +214,4 @@ function test() {
 
 }
 
-// main();
+newMain();

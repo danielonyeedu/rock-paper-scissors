@@ -6,44 +6,60 @@
         <title>Rock, Paper, Scissors</title>
         <script src="./js/script.js" defer></script>
         <link rel="stylesheet" href="./css/styles.css">
-    </head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    </head>
     <body>
-        <div class="container">
-            <div class="header">
-                <div class="header-title">
-                    Rock, Paper, Scissors, Lizard, Spock
+        <div class="header">
+            <div class="header-title">
+                Rock, Paper, Scissors, Lizard, Spock
+            </div>
+            <img src="./images/symbol.png" class="header-images">
+        </div>
+        <div class="content">
+            <div class="content-players">
+                <h4>Player: <span id="player-score">0</span></h4>
+                <h4>VS</h4>
+                <h4>Computer: <span id="computer-score">0</span></h4>
+            </div>
+            <div class="content-options">
+                <img src="./images/lizard.svg" class="player-choice" data-choice="lizard" alt="image of lizard">
+                <img src="./images/rock.png" class="player-choice" data-choice="rock" alt="image of rock">
+                <img src="./images/paper.png" class="player-choice" data-choice="paper" alt="image of paper">
+                <img src="./images/scissors.png" class="player-choice" data-choice="scissors" alt="image of scissors">
+                <img src="./images/spock.svg" class="player-choice" data-choice="spock" alt="image of spock">
+            </div>
+            <div>Rules</div>
+            <div class="content-rules">
+                <div class="rule1">
+                    <p>It's Simple</p>
+                    <ul>
+                        <li>Scissors cuts Paper</li>
+                        <li>Paper covers Rock</li>
+                        <li>Rock crushes Lizard</li>
+                        <li>Lizard poisons Spock</li>
+                        <li>Spock smashes Scissors</li>
+                        <li>Scissors decapitates Lizard</li>
+                        <li>Lizard eats Paper</li>
+                        <li>Paper disproves Spock</li>
+                        <li>Spock vaporizes Rock</li>
+                        <li>(and as it always has) Rock crushes Scissors</li>
+                    </ul>
                 </div>
-                <div class="header-images">
-                    <p>image of rock</p>
-                    <p>image of scissors</p>
-                    <p>image of paper</p>
-                    <p>image of lizard</p>
-                    <p>image of spock</p>
+                <div class="rule2">
+                    <p>TV with sheldon's explaination</p>
                 </div>
             </div>
-            <div class="content">
-                <div class="content-players">
-                    <h4>Player: 0</h4>
-                    <h4>VS</h4>
-                    <h4>Computer: 0</h4>
-                </div>
-                <div class="content-options">
-                    <p>image of rock</p>
+        </div>
+        <div class="footer">
+            <div class="footer-links">            
+                <span>Get Connected:</span>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-youtube"></a>
+            </div>
+            <p class="copyright">Copyright © 2023 Daniel Onyemelukwe</p>
 
-                    <img src="./images/paper.svg">
-                    <p>image of scissors</p>
-                    <p>image of paper</p>
-                    <p>image of lizard</p>
-                    <p>image of spock</p>
-                </div>
-                <div class="content-rules">
-                    <p>Rule Design Here</p>
-                </div>
-            </div>
-            <div class="footer">
-                <p>Copyright © 2023 DanielOnye</p>
-                <p>Get Connected:</p>
-            </div>
+
         </div>
     </body>
 </html>
