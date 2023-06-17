@@ -21,41 +21,54 @@ function playRound(playerSelection, computerSelection) {
     let playerWins; // True if player wins, False if player loses
     let draw = false;; // True if there is a draw
     let decision; // string of round outcome
+    let output;
 
     // Game logic for rock, paper, scissors
     if (playerSelection === "rock"){
         if (computerSelection === "scissors"){
+            output = "Round Won 🙂: Your 🪨 has crushed the Computer's ✂️"
             playerWins = true; 
         }
         else if (computerSelection === "rock"){
+            output = "Round Draw 🤨: You both chose 🪨"
             draw = true; 
         }
         else {
+            output = "Round Lost 😞: Your 🪨 got covered by the Computer's 📜"
             playerWins = false; 
         }
     }
     else if (playerSelection === "paper"){
         if (computerSelection === "scissors"){
+            output = "Round Lost 😞: Your 📜 got cut by the Computer's ✂️"
             playerWins = false; 
         }
         else if (computerSelection === "rock"){
+            output = "Round Won 🙂: Your 📜 has covered the Computer's 🪨"
             playerWins = true; 
         }
         else {
+            output = "Round Draw 🤨: You both chose 📜"
             draw = true; 
         }
     }
     else {
         if (computerSelection === "scissors"){
+            output = "Round Draw 🤨: You both chose ✂️"
             draw = true;
         }
         else if (computerSelection === "rock"){
+            output = "Round Lost 😞: Your ✂️ got destroyed by the Computer's 🪨"
             playerWins = false;
         }
         else {
+            output = "Round Won 🙂: Your ✂️ have cut the Computer's 📜"
             playerWins = true; 
         }
     }
+
+    // update results of round in html
+    document.querySelector(".content-results").textContent = output
 
     // Check if draw first, then if player won
     if (draw) {

@@ -37,8 +37,9 @@ body {
     justify-content: center;
     gap: 15px;
     font-size: 20px;    
-    margin-bottom: 40px;
+    margin-bottom: 4px;
 }
+
 
 .content-options {
     display: flex;
@@ -155,6 +156,15 @@ a {
     -webkit-text-stroke: 2px white;
     font-family: 'Lilita One', cursive;
     font-size: 37px;
+    /* font-style: italic; */
+    color: black;
+    text-align: center;
+}
+
+.content-results {
+    font-size: 22px;
+    -webkit-text-stroke: 1px white;
+    font-family: 'Lilita One', cursive;
     /* font-style: italic; */
     color: black;
     text-align: center;
