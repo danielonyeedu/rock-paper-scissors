@@ -26,15 +26,25 @@ function playRound(playerSelection, computerSelection) {
     // Game logic for rock, paper, scissors
     if (playerSelection === "rock"){
         if (computerSelection === "scissors"){
-            output = "Round Won 🙂: Your 🪨 has crushed the Computer's ✂️"
+            output = "Round Won 🙂: Your 🪨 crushed the Computer's ✂️"
             playerWins = true; 
         }
         else if (computerSelection === "rock"){
             output = "Round Draw 🤨: You both chose 🪨"
             draw = true; 
         }
-        else {
+        else if (computerSelection === "paper") {
             output = "Round Lost 😞: Your 🪨 got covered by the Computer's 📜"
+            playerWins = false; 
+        }
+        // Rock crushes lizard
+        else if (computerSelection === "lizard") {
+            output = "Round Won 🙂: Your 🪨 crushed the Computer's 🦎"
+            playerWins = true; 
+        }
+        // Spock vaporizes rock
+        else {
+            output = "Round Lost 😞: Your 🪨 got vaporized by the Computer's 🖖"
             playerWins = false; 
         }
     }
@@ -44,15 +54,26 @@ function playRound(playerSelection, computerSelection) {
             playerWins = false; 
         }
         else if (computerSelection === "rock"){
-            output = "Round Won 🙂: Your 📜 has covered the Computer's 🪨"
+            output = "Round Won 🙂: Your 📜 covered the Computer's 🪨"
             playerWins = true; 
         }
-        else {
+        else if (computerSelection === "paper") {
             output = "Round Draw 🤨: You both chose 📜"
             draw = true; 
         }
+        //Lizard eats paper
+        else if (computerSelection === "lizard") {
+            output = "Round Lost 😞: Your 📜 got eaten by the Computer's 🦎"
+            playerWins = false; 
+        }
+        //Paper Disproves Spock
+        else {
+            output = "Round Won 🙂: Your 📜 disproved the Computer's 🖖"
+            playerWins = true; 
+        }
+        
     }
-    else {
+    else if (playerSelection === "scissors") {
         if (computerSelection === "scissors"){
             output = "Round Draw 🤨: You both chose ✂️"
             draw = true;
@@ -61,11 +82,78 @@ function playRound(playerSelection, computerSelection) {
             output = "Round Lost 😞: Your ✂️ got destroyed by the Computer's 🪨"
             playerWins = false;
         }
+        else if (computerSelection === "paper") {
+            output = "Round Won 🙂: Your ✂️ cut the Computer's 📜"
+            playerWins = true; 
+        }
+        // Spock smashes scissors
+        else if (computerSelection === "spock") {
+            output = "Round Lost 😞: Your ✂️ got smashed by the Computer's 🖖"
+            playerWins = false; 
+        }
+        // Scissors decapitates lizard
         else {
-            output = "Round Won 🙂: Your ✂️ have cut the Computer's 📜"
+            output = "Round Won 🙂: Your ✂️ decapitated the Computer's 🦎"
             playerWins = true; 
         }
     }
+    //Lizard
+    else if (playerSelection === "lizard") {
+        //Lizard poisons spock
+        if (computerSelection === "spock"){
+            output = "Round Won 🙂: Your 🦎 poisoned the Computer's 🖖"
+            playerWins = true; 
+        }
+        // Rock crushed lizard
+        else if (computerSelection === "rock") {
+            output = "Round Lost 😞: Your 🦎 got crushed by the Computer's 🪨"
+            playerWins = false; 
+        }
+        // Scissors decapitates lizard
+        else if (computerSelection === "scissors") {
+            output = "Round Lost 😞: Your 🦎 got decapitated by the Computer's ✂️"
+            playerWins = false; 
+        }
+        // Lizard eats paper
+        else if (computerSelection === "paper"){
+            output = "Round Won 🙂: Your 🦎 ate the Computer's 📜"
+            playerWins = true; 
+        }
+        else {
+            output = "Round Draw 🤨: You both chose 🦎"
+            draw = true;
+        }
+    }
+
+    //Spock
+    else {
+        //spock smashes scissors
+        if (computerSelection === "scissors"){
+            output = "Round Won 🙂: Your 🖖 smashed the Computer's ✂️"
+            playerWins = true; 
+        }
+        // Lizard poisons spock
+        else if (computerSelection === "lizard") {
+            output = "Round Lost 😞: Your 🖖 got poisoned by the Computer's 🦎"
+            playerWins = false; 
+        }
+        //Paper Disproves spock
+        else if (computerSelection === "paper") {
+            output = "Round Lost 😞: Your 🖖 got disproved by the Computer's 📜"
+            playerWins = false; 
+        }
+        //Spock Vaporizes rock
+        else if (computerSelection === "rock"){
+            output = "Round Won 🙂: Your 🖖 vaporized the Computer's 🪨"
+            playerWins = true; 
+        }
+        else {
+            output = "Round Draw 🤨: You both chose 🖖"
+            draw = true;
+        }
+
+    }
+
 
     // update results of round in html
     document.querySelector(".content-results").textContent = output
